@@ -23,8 +23,8 @@ violator_songs_list = [
 a = violator_songs_list[3][1]
 b = violator_songs_list[5][1]
 c = violator_songs_list[8][1]
-three_songs = round(a+b+c,2)
-print('Первый список трех песен:',three_songs)
+three_songs1 = round(a+b+c,2)
+print('Первый список трех песен:',three_songs1)
 
 # распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
 #   А другие три песни звучат ХХХ минут
