@@ -1,0 +1,121 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Есть словарь кодов товаров
+
+goods = {
+    'Лампа': '12345',
+    'Стол': '23456',
+    'Диван': '34567',
+    'Стул': '45678',
+}
+
+# Есть словарь списков количества товаров на складе.
+
+store = {
+    '12345': [
+        {'quantity': 27, 'price': 42},
+    ],
+    '23456': [
+        {'quantity': 22, 'price': 510},
+        {'quantity': 32, 'price': 520},
+    ],
+    '34567': [
+        {'quantity': 2, 'price': 1200},
+        {'quantity': 1, 'price': 1150},
+    ],
+    '45678': [
+        {'quantity': 50, 'price': 100},
+        {'quantity': 12, 'price': 95},
+        {'quantity': 43, 'price': 97},
+    ],
+}
+
+# Рассчитать на какую сумму лежит каждого товара на складе
+# например для ламп
+
+lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
+# или проще (/сложнее ?)
+lamp_code = goods['Лампа']
+lamps_item = store[lamp_code][0]
+lamps_quantity = lamps_item['quantity']
+lamps_price = lamps_item['price']
+lamps_cost = lamps_quantity * lamps_price
+print('Всего ламп: -', lamps_quantity, 'шт, Общая стоимость:', lamps_cost, 'руб')
+
+# Вывести стоимость каждого товара на складе: один раз распечать сколько всего столов, стульев и т.д. на складе
+# Формат строки <товар> - <кол-во> шт, стоимость <общая стоимость> руб
+
+# WARNING для знающих циклы: БЕЗ циклов. Да, с переменными; да, неэффективно; да, копипаста.
+# Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
+
+#TODO Столы
+tables_code = goods['Стол']
+tables_item = store[tables_code][0]
+tables_quantity = tables_item['quantity']
+tables_prise = tables_item['price']
+tables_cost = tables_quantity * tables_prise
+
+tables_item1 = store[tables_code][1]
+tables_quantity1 = tables_item1['quantity']
+tables_prise1 = tables_item1['price']
+tables_cost1 = tables_quantity1 * tables_prise1
+
+all_tables = (tables_quantity + tables_quantity1)
+all_tables_cost = (tables_cost1 + tables_cost)
+print('Всего столов: -', all_tables, 'шт, Стомость:', all_tables_cost, 'руб')
+print('Столы в секции 1 -', tables_quantity, 'шт, Стомость:', tables_cost, 'руб')
+print('Столы в секции 2 -', tables_quantity1, 'шт, Стомость:', tables_cost1, 'руб')
+
+#TODO Диваны
+sofa_code = goods['Диван']
+sofa_item = store[sofa_code][0]
+sofa_quantity = sofa_item['quantity']
+sofa_prise = sofa_item['price']
+sofa_cost = sofa_quantity * sofa_prise
+
+sofa_item1 = store[sofa_code][1]
+sofa_quantity1 = sofa_item1['quantity']
+sofa_prise1 = sofa_item1['price']
+sofa_cost1 = sofa_quantity1 * sofa_prise1
+
+all_sofa = (sofa_quantity + sofa_quantity1)
+all_sofa_cost = (sofa_cost1 + sofa_cost)
+print('Всего диванов: -', all_sofa, 'шт, Стомость:', all_sofa_cost, 'руб')
+print('Диваны в секции 1 -', sofa_quantity, 'шт, Стомость:', sofa_cost, 'руб')
+print('Диваны в секции 2 -', sofa_quantity1, 'шт, Стомость:', sofa_cost1, 'руб')
+
+#TODO Стулья
+chair_code = goods['Стул']
+chair_item = store[chair_code][0]
+chair_quantity = chair_item['quantity']
+chair_prise = chair_item['price']
+chair_cost = chair_quantity * chair_prise
+
+chair_item1 = store[chair_code][1]
+chair_quantity1 = chair_item1['quantity']
+chair_prise1 = chair_item1['price']
+chair_cost1 = chair_quantity1 * chair_prise1
+
+chair_item2 = store[chair_code][2]
+chair_quantity2 = chair_item2['quantity']
+chair_prise2 = chair_item2['price']
+chair_cost2 = chair_quantity2 * chair_prise2
+
+all_chair = (chair_quantity + chair_quantity1 + chair_quantity2 )
+all_chair_cost = (chair_cost + chair_cost1 + chair_cost2)
+print('Всего стульев: -', all_chair, 'шт, Стомость:', all_chair_cost, 'руб')
+print('Стульев в секции 1 -', chair_quantity, 'шт, Стомость:', chair_cost, 'руб')
+print('Стульев в секции 2 -', chair_quantity1, 'шт, Стомость:', chair_cost1, 'руб')
+print('Стульев в секции 2 -', chair_quantity2, 'шт, Стомость:', chair_cost2, 'руб')
+
+
+
+
+
+
+
+
+
+
+
